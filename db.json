@@ -17,19 +17,13 @@
     {
       "name": "The Inferno",
       "toppings": [
-        "chili",
-        "bacon",
-        "mushroom",
-        "basil",
         "pepperoni",
-        "olive",
-        "sweetcorn",
-        "anchovy",
         "mozzarella",
-        "pepper",
-        "tomato"
+        "onion",
+        "bacon"
       ],
-      "id": 1
+      "id": 1,
+      "sizes": []
     },
     {
       "name": "Seaside Surfin'",
@@ -44,6 +38,19 @@
         "tomato"
       ],
       "id": 2
+    },
+    {
+      "name": "The Hatred",
+      "toppings": [
+        "anchovy",
+        "pepper",
+        "mushroom",
+        "olive",
+        "tomato",
+        "chili"
+      ],
+      "sizes": [],
+      "id": 3
     }
   ]
 }
