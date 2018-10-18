@@ -5,13 +5,13 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack -p",
-    "build:dev":
-      "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "build:dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
     "build:production": "npm run clean && npm run build",
     "clean": "rimraf build",
     "start": "npm run build:dev"
   },
   "devDependencies": {
+    "@angular/cli": "^6.0.0-rc.4",
     "@angular/compiler": "5.0.0",
     "@angular/compiler-cli": "5.0.0",
     "@ngtools/webpack": "1.7.1",
@@ -40,7 +40,8 @@
     "sass-loader": "6.0.6",
     "typescript": "2.5.2",
     "webpack": "3.6.0",
-    "webpack-dev-server": "2.8.2"
+    "webpack-dev-server": "2.8.2",
+    "@angular-devkit/build-angular": "~0.0.9"
   },
   "dependencies": {
     "@angular/animations": "5.0.0",

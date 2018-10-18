@@ -16,23 +16,20 @@ const initialState: PizzaState = {
 };
 
 export function reducer(state = initialState, action: fromPizzas.PizzasAction): PizzaState {
+    const newState = {... state};
+    
     switch(action.type) {
         case fromPizzas.LOAD_PIZZAS: {
-            const loading = true;
-            const loaded = false;
-
+            newState.loading = true;
+            newState.loaded = false;
             console.log('LoadPizzas', state);
-
-            return {
-                ... state,
-                loading,
-                loaded
-            };
+            return newState;
         }
         case fromPizzas.LOAD_PIZZAS_SUCCESS: {
-            const loading = false;
-            const loaded = true;
-            const pizza = action.payload; 
+            newState.loading = false;
+            newState.loaded = true;
+            newState.pizzas = action.payload;
+            return newState;
         }
     
     }
@@ -41,5 +38,6 @@ export function reducer(state = initialState, action: fromPizzas.PizzasAction): 
 }
 
 export const getPizzas = (state: PizzaState) => state.pizzas;
-
+export const getPizzasLoading = (state: PizzaState) => state.pizzas;
+export const getPizzasLoaded = (state: PizzaState) => state.pizzas;
 
