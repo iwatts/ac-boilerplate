@@ -22,17 +22,24 @@ export function reducer(state = initialState, action: fromPizzas.PizzasAction): 
             const loaded = false;
 
             console.log('LoadPizzas', state);
-            
+
             return {
                 ... state,
                 loading,
                 loaded
             };
         }
+        case fromPizzas.LOAD_PIZZAS_SUCCESS: {
+            const loading = false;
+            const loaded = true;
+            const pizza = action.payload; 
+        }
     
     }
     
     return state;
 }
+
+export const getPizzas = (state: PizzaState) => state.pizzas;
 
 

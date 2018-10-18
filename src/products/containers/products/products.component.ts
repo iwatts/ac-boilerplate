@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, state } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { Pizza } from '../../models/pizza.model';
@@ -6,6 +6,8 @@ import { PizzasService } from '../../services/pizzas.service';
 
 import * as fromStore from '../../store';
 import { LoadPizzas } from '../../store';
+import { Action } from 'rxjs/scheduler/Action';
+//import { any } from 'bluebird';
 
 @Component({
   selector: 'products',
@@ -39,8 +41,9 @@ export class ProductsComponent implements OnInit {
   constructor(private pizzaService: PizzasService, private store: Store<fromStore.ProductsState>) {}
 
   ngOnInit() {
+    this.store.dispatch(new LoadPizzas(state));
     this.pizzaService.getPizzas().subscribe(pizzas => {
-        this.pizzas = this.store.dispatch(LoadPizzas);
+        this.pizzas = pizzas;
     });
     
   }
